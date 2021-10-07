@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', default=get_random_secret_key())
 
-DEBUG = os.environ.get('DEBUG', default=False)
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'web',
@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_yasg',
     'users',
     'tasks',
 ]
@@ -86,13 +87,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'ru'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 STATIC_URL = '/static/'
